@@ -19,5 +19,6 @@
   .button {
     border-image: linear-gradient(to bottom, #000F55, #B20048);
     border-image-slice: 1;
+    
   }
   

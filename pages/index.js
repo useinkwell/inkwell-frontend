@@ -6,8 +6,9 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Nav from "@/components/Nav";
 import heroImg from "@/public/images/hero-image.png";
-import secondSlide from "@/public/images/secondSlide.svg";
+import secondSlide from "@/public/images/second-slide.svg";
 import ellipse from "/public/images/ellipse.png";
+import tablet from "/public/images/tablet-ellipse.png";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -36,26 +37,41 @@ export default function Home() {
           <Image
             src={heroImg}
             alt="Inkwell background image"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            fill
+            style={{ objectFit: "cover" }}
           />
-          <button className="block sm:hidden z-[3] bg-white rounded-lg border-solid border-2 border-pink-800 text-base font-semibold items-center px-8 py-2 absolute bottom-5 right-5">
-            <Link className="gradient-text " href="/">
-              Sign Up
-            </Link>
-          </button>
+
+
+          <div className="sm:hidden z-[3] flex items-center justify-center h-11 w-32 bg-gradient-to-b from-[#000F55] to-[#B20048] p-1 rounded font-semibold absolute bottom-4 right-4">
+            <div className="bg-white p-2 rounded w-full h-full text-center flex items-center justify-center ">
+              <Link className="text-xl" href="/"> Sign Up</Link>
+            </div>
+          </div>
+
+
         </div>
-        <article className="relative h-fit p-20 sm:p-52 md:h-screen flex items-center bg-cover bg-center md:mt-20">
+        <article className="flex relative py-20 px-14 sm:pt-[13rem] md:px-[5rem] items-center">
+
           <Image
             src={secondSlide}
-            alt="Inkwell background image"
-            layout="fill"
-            objectFit="contain"
-            objectPosition="center"
-            className="items-center"
+            alt="inkwell background image"
+            className="secondSlide hidden lg:block w-[50%]"
           />
-          <p className="text-inkBlue text-xl z-[3] text-center font-medium leading-10 max-w-full md:max-w-lg relative md:absolute md:top-32 md:right-32">
+          <Image
+            width={500}
+            height={500}
+            src={tablet}
+            alt="inkwell background image"
+            className="tablet hidden sm:block  lg:hidden absolute mx-[10%] 
+            "
+          />
+          <Image
+            src={ellipse}
+            alt="inkwell background image"
+            className="ellipse-img sm:hidden absolute top-0 right-12"
+          />
+          <p className="text-inkBlue text-xl z-[3] text-center font-medium leading-10 max-w-full  
+          lg:w-[50%] sm:text-3xl sm:leading-[3rem]">
             The premier online community for writers of all levels and genres.
             Whether you're a seasoned veteran or just starting out, Inkwell is
             the perfect place to connect with other writers, share your work,
