@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  scroll-behavior: smooth;
+}
+
 .gradient-text{
     background: linear-gradient(to bottom, #000F55, #B20048);
     background-clip: text;

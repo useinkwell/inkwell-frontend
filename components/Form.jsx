@@ -42,7 +42,8 @@ function Form() {
         }
     };
     return (
-        <>
+        <div>
+
             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
                 <input
                     placeholder="John Doe"
@@ -64,7 +65,9 @@ function Form() {
                     <span className="gradient-text">Join the wait-list</span>
                 </button>
             </form>
-        </>
+
+        </div>
+
     );
 }
 

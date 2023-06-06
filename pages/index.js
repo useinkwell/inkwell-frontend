@@ -35,7 +35,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="images/inkwell-icon.png" />
       </Head>
-      <div className="">
+      <div id="home" className="">
         <Nav />
         <div className="relative h-screen flex items-center justify-center md:justify-start bg-cover bg-center">
           <div className="text-white md:ml-12 text-4xl z-[3] flex flex-col gap-[1rem]">
@@ -52,7 +52,7 @@ export default function Home() {
 
           <div className="sm:hidden z-[3] flex items-center justify-center h-11 w-32 bg-gradient-to-b from-[#000F55] to-[#B20048] p-1 rounded font-semibold absolute bottom-4 right-4">
             <div className="bg-white p-2 rounded w-full h-full text-center flex items-center justify-center ">
-              <Link className="text-xl" href="/"> Sign Up</Link>
+              <Link className="text-xl" href="#join"> Sign Up</Link>
             </div>
           </div>
 
@@ -138,22 +138,12 @@ export default function Home() {
 
         </article>
 
-        <article className="flex flex-col gap-10 items-center bg-[url('../public/images/bg-4.png')]   bg-no-repeat bg-cover bg-center py-20">
+        <article id="join" className="flex flex-col gap-10 items-center bg-[url('../public/images/bg-4.png')]   bg-no-repeat bg-cover bg-center py-20">
           <p className="text-white w-[85%] md:w-[50%]  lg:w-[78%] text-center text-3xl mx-auto leading-[3.5rem]">
             Join now and become a part of Inkwell connect with other writers,
             share your work, and improve your writing skills!
           </p>
-          {/* <form className="flex flex-col gap-5">
-            <input placeholder="John Doe" name="name" type="text"
-              className="focus:outline-none p-2 rounded border-b-4 border-inkBlue text-inkBlue" />
-            <input placeholder="johndoe@gmail.com" name="email" type="email"
-              className="focus:outline-none p-2 rounded border-b-4 border-inkBlue text-inkBlue"
-            />
-            <button className="bg-white rounded px-[4rem] py-[0.5rem] text-2xl font-bold" type="submit">
-              <span className="gradient-text"> Join </span>
-            </button>
-          </form> */}
-          <Form/>
+          <Form />
         </article>
         <footer className="flex flex-col md:flex-row md:justify-center md:gap-10 md:text-2xl gap-20 text-gray-600 text-3xl pl-[2rem] py-[3.5rem] md:pl-0
         lg:gap-28">
