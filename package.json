@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "inkwell",
   "version": "0.1.0",
@@ -23,3 +24,29 @@
     "tailwindcss": "^3.2.7"
   }
 }
+=======
+{
+  "name": "inkwell",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.1.6",
+    "eslint": "8.34.0",
+    "eslint-config-next": "13.1.6",
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
+  }
+}
+>>>>>>> 7a59bbac2c285bd3ffaa0bfeef985924008c00ef
