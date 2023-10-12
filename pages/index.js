@@ -79,8 +79,8 @@ export default function Home() {
             alt="inkwell background image"
             className="ellipse-img sm:hidden absolute top-0 right-12"
           />
-          <p className="text-inkBlue text-xl z-[3] text-center font-medium leading-10 max-w-full  
-          lg:w-[60%] sm:text-3xl sm:leading-[3rem] lg:relative lg:bottom-10">
+          <p className="text-inkBlue text-xl z-[3] text-center font-normal leading-8 max-w-full  
+           md:text-4xl sm:text-2xl md:leading-[66.5px] md:w-[760px] lg:w-[80%] lg:relative lg:left-32 lg:bottom-10 mx-auto">
             The premier online community for writers of all levels and genres.
             Whether you're a seasoned veteran or just starting out, Inkwell is
             the perfect place to connect with other writers, share your work,
@@ -90,7 +90,7 @@ export default function Home() {
         {/* Section 3 */}
         <article className="flex flex-col gap-20 items-center bg-[url('../public/images/bg-4.png')]   bg-no-repeat bg-cover bg-center py-20">
 
-          <div className="flex flex-col gap-28 lg:flex-row lg:pt-[2rem] lg:px-[3rem]">
+          <div className="flex flex-col items-start gap-28 lg:flex-row lg:pt-[2rem] lg:px-[3rem]">
 
             <Image
               src={desktopWrite1}
@@ -103,25 +103,25 @@ export default function Home() {
               alt="inkwell writing UI"
               className="mx-auto w-[80%] hidden sm:block lg:w-[40%]"
             />
-            <p className="text-white w-[85%] text-center text-3xl mx-auto leading-[3.5rem] lg:w-[50%] lg:pt[1.5rem]">
+            <p className="text-white w-[87%] text-center text-xl sm:text-2xl md:text-4xl font-normal mx-auto leading-8 lg:w-[50%] lg:pt-[5.5rem]">
               Our website offers easy-to-use editing tools to help you improve your writing skills and advance your career.
               With Inkwell, you can easily share your work and receive feedback from other writers in our community.
             </p>
           </div>
-          <button className="bg-white rounded px-[2rem] py-[1.5rem] text-4xl font-bold lg:mr-[55%]">
+          <button className="bg-white rounded px-[2rem] py-[1.5rem] text-2xl font-bold lg:mr-[55%]">
             <span className="gradient-text"> Try it out now! </span>
           </button>
         </article>
 
         <article className="flex flex-col-reverse items-center gap-10 py-10 md:flex-row md:px-[2rem] lg:py-0">
-          <p className="text-inkBlue text-4xl leading-[3.5rem] text-center lg:w-[40%] w-[80%] md:w-[50%]">
+          <p className="text-inkBlue text-xl sm:text-2xl md:text-4xl md:leading-[66.5px] font-normal text-center w-[60%] md:w-[50%] lg:w-[40%]">
             Create your portfolio, showcase your work and build your author platform.
             With our portfolio feature, you can easily share your work, receive feedback, and grow your audience.
           </p>
           <Image
             src={portfolioSmall}
             alt="an image in inkwell website"
-            className="mx-auto w-[60%] sm:block  md:hidden"
+            className="mx-auto w-[185px] sm:block md:hidden"
           />
 
           <Image
@@ -139,13 +139,13 @@ export default function Home() {
         </article>
 
         <article id="join" className="flex flex-col gap-10 items-center bg-[url('../public/images/bg-4.png')]   bg-no-repeat bg-cover bg-center py-20">
-          <p className="text-white w-[85%] md:w-[50%]  lg:w-[78%] text-center text-3xl mx-auto leading-[3.5rem]">
+          <p className="text-white w-[75%] md:w-[90%] text-center text-2xl md:text-4xl md:px-[20px] font-bold mx-auto">
             Join now and become a part of Inkwell connect with other writers,
             share your work, and improve your writing skills!
           </p>
           <Form />
         </article>
-        <footer className="flex flex-col md:flex-row md:justify-center md:gap-10 md:text-2xl gap-20 text-gray-600 text-3xl pl-[2rem] py-[3.5rem] md:pl-0
+        <footer className="flex flex-col md:flex-row md:justify-center md:gap-10 text-base md:text-xl gap-20 text-gray-600 font-normal pl-[2rem] py-[3.5rem] md:pl-0
         lg:gap-28">
           <div className="flex flex-col gap-10 items-start">
             <Link href="/">Homepage</Link>

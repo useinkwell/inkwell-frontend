@@ -1,46 +1,47 @@
 import { useState } from "react";
+import axios from 'axios';
 
 function Form() {
-    const [formData, setFormData] = useState({
+
+    const [formData, setData] = useState({
         name: '',
         email: ''
     });
 
-    function handleInputChange(event) {
-
-        const { name, value } = event.target;
-        setFormData(prevData => ({ ...prevData, [name]: value }));
+    const handleInputChange = (event) => {
+        setData({ ...formData, [event.target.name]: event.target.value });
         console.log(formData);
     }
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const payload = {
-            email: formData.email
-        }
-        const formDataa = new FormData();
-        formDataa.append('email', formData.email)
         try {
-            // Send the data to the server /api/hello
-            const response = await fetch('https://wait-linkr-api.onrender.com/add', {
-                method: 'POST',
-                // headers: {
-                //     'Content-Type': 'application/json',
-                // },
-                body: formDataa,
-                mode: "no-cors"
-            });
 
-            if (response.ok) {
-                // Handle successful response
-                console.log('Data sent successfully!');
-            } else {
-                // Handle error response
-                console.error('Failed to send data..');
+            const apiKey = 'PMIb9gs716ERZ9tmRjTEtjdAhzsyBIPO3J0';
+            
+            const form = new FormData();
+            form.append('name', formData.name);
+            form.append('email', formData.email);
+
+            const headers = {
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type':'multipart/form-data',
             }
-        } catch (error) {
-            console.error('An error occurred:', error);
+            const response = await axios.post('https://inkwell-backend.onrender.com/api/add',
+                form,
+                { headers }
+            );
+
+            console.log(response.data);
+
         }
-    };
+        catch (error) {
+            console.error('An error occured: ', error)
+        }
+
+    }
+
     return (
         <div>
 

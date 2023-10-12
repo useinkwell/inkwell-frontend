@@ -64,6 +64,7 @@ export default function Nav() {
           <div className="flex gap-[.4rem] align-center">
             <Image
               src={loginIcon}
+              alt="log in icon"
               width={25}
               height={25}
             />
@@ -71,6 +72,7 @@ export default function Nav() {
           </div>
           <div className="flex gap-[.4rem] align-center">
             <Image
+            alt="log in icon"
               src={aboutIcon}
               width={25}
               height={25}
