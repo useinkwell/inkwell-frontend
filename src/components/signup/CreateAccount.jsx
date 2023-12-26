@@ -5,7 +5,7 @@ import styles from "./signup.module.css";
 import { useState } from "react";
 
 // custom input form
-const CustomInput = ({ name, inputType }) => {
+const CustomInput = ({ name, inputtype }) => {
   const [isInputActive, setIsInputActive] = useState(false);
 
   const handleInputFocus = () => {
@@ -19,7 +19,7 @@ const CustomInput = ({ name, inputType }) => {
 
   return (
     <div>
-      {inputType === "password" ? (
+      {inputtype === "password" ? (
         <div className={` ${isInputActive ? styles.active : styles.notActive}`}>
           <input
             placeholder={name}
@@ -32,7 +32,7 @@ const CustomInput = ({ name, inputType }) => {
             // className="w-full focus:outline-none p-2 rounded-xl  border-2 border-inkBlue text-inkBlue"
           />
         </div>
-      ) : inputType === "select" ? (
+      ) : inputtype === "select" ? (
         <div className={` ${isInputActive ? styles.active : styles.notActive}`}>
           <select
             placeholder={name}
@@ -54,7 +54,7 @@ const CustomInput = ({ name, inputType }) => {
           <input
             placeholder={name}
             name="name"
-            inputType="text"
+            inputtype="text"
             className={` w-full px-4 py-2 border border-[#9F9999] outline-none rounded-xl box-border text-gray-700 
             border-solid ${styles.borderGradientOrangePink} focus:border-none`}
             onFocus={handleInputFocus}
@@ -69,7 +69,7 @@ const CustomInput = ({ name, inputType }) => {
     //   <input
     //     placeholder={name}
     //     name="name"
-    //     inputType="text"
+    //     inputtype="text"
     //     className={` w-full px-4 py-2 border border-[#9F9999] outline-none rounded-xl box-border text-gray-700
     //         border-solid ${styles.borderGradientOrangePink} focus:border-none`}
     //     onFocus={handleInputFocus}

@@ -21,7 +21,7 @@
 .active {
     /* padding: 1rem; */
     position: relative;
-    background: linear-gradient(to right, red, purple);
+    background: linear-gradient(to top, #000F55, #B20048);
     padding: 3px;
     border-radius: .9rem;
     transition: all 0.1s ease-in-out;
