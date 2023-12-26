@@ -1,0 +1,34 @@
+/* .borderGradientOrangePink {
+    border-image: linear-gradient(to right, #ff8a00, #e52e71);
+    border-image-slice: 1;
+    border-width: 3px;
+  } */
+
+/* .formGroup{
+    position: relative;
+
+  }
+
+  .formGroup::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+  } */
+.active {
+    /* padding: 1rem; */
+    position: relative;
+    background: linear-gradient(to right, red, purple);
+    padding: 3px;
+    border-radius: .9rem;
+    transition: all 0.1s ease-in-out;
+}
+
+.notActive {
+    background: none;
+    padding: 0px;
+    border: none;
+}
