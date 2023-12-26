@@ -58,12 +58,12 @@ export default function Home() {
 
         </div>
         <article className="flex relative py-20 px-14 sm:pt-[13rem] md:px-[5rem] items-center 
-        lg:justify-end lg:items-start sm:pb-[12rem] md:pb-[20rem]">
+        lg:justify-end lg:items-start sm:pb-[12rem] md:pb-[20rem] h-[962px]">
 
           <Image
             src={secondSlide}
             alt="inkwell background image"
-            className="secondSlide hidden lg:block w-[80%] lg:w-[70rem]  lg:absolute top-[3rem]"
+            className="secondSlide hidden lg:block w-[80%] lg:w-[70rem] 2xl:w-11/12 2xl:top-[5rem]  lg:absolute top-[3rem] xl:w-[98%]"
           />
           <Image
             width={500}
@@ -79,7 +79,8 @@ export default function Home() {
             className="ellipse-img sm:hidden absolute top-0 right-12"
           />
           <p className="text-inkBlue text-xl z-[3] text-center font-normal leading-8 max-w-full  
-           md:text-4xl sm:text-2xl md:leading-[66.5px] md:w-[760px] lg:w-[80%] lg:relative lg:left-32 lg:bottom-10 mx-auto">
+           md:text-4xl sm:text-2xl md:leading-[66.5px] md:w-[760px] lg:w-[80%] lg:relative lg:left-32 lg:bottom-10 mx-auto
+           xl:top-[1.5rem] 2xl:w-[831px] 2xl:left-72 2xl:top-12">
             The premier online community for writers of all levels and genres.
             Whether you're a seasoned veteran or just starting out, Inkwell is
             the perfect place to connect with other writers, share your work,
