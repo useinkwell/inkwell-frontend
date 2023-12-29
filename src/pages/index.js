@@ -49,7 +49,7 @@ export default function Home() {
           />
 
 
-          <div className="sm:hidden z-[3] flex items-center justify-center h-11 w-32 bg-gradient-to-b from-[#000F55] to-[#B20048] p-1 rounded font-semibold absolute bottom-4 right-4">
+          <div className="sm:hidden z-[3] flex items-center justify-center h-11 w-32 bg-gradient-to-b from-secondary to-[#B20048] p-1 rounded font-semibold absolute bottom-4 right-4">
             <div className="bg-white p-2 rounded w-full h-full text-center flex items-center justify-center ">
               <Link className="text-xl" href="#join"> Sign Up</Link>
             </div>
@@ -78,7 +78,7 @@ export default function Home() {
             alt="inkwell background image"
             className="ellipse-img sm:hidden absolute top-0 right-12"
           />
-          <p className="text-inkBlue text-xl z-[3] text-center font-normal leading-8 max-w-full  
+          <p className="text-primary text-xl z-[3] text-center font-normal leading-8 max-w-full  
            md:text-4xl sm:text-2xl md:leading-[66.5px] md:w-[760px] lg:w-[80%] lg:relative lg:left-32 lg:bottom-10 mx-auto
            xl:top-[1.5rem] 2xl:w-[831px] 2xl:left-72 2xl:top-12">
             The premier online community for writers of all levels and genres.
@@ -114,7 +114,7 @@ export default function Home() {
         </article>
 
         <article className="flex flex-col-reverse items-center gap-10 py-10 md:flex-row md:px-[2rem] lg:py-0">
-          <p className="text-inkBlue text-xl sm:text-2xl md:text-4xl md:leading-[66.5px] font-normal text-center w-[60%] md:w-[50%] lg:w-[40%]">
+          <p className="text-primary text-xl sm:text-2xl md:text-4xl md:leading-[66.5px] font-normal text-center w-[60%] md:w-[50%] lg:w-[40%]">
             Create your portfolio, showcase your work and build your author platform.
             With our portfolio feature, you can easily share your work, receive feedback, and grow your audience.
           </p>

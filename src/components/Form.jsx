@@ -73,7 +73,7 @@ export default function Form() {
     <div>
       {/*   Success message  */}
       {isSuccess ? (
-        <div className="flex items-center  p-3 gap-5 text-inkBlue bg-white text-center text-2xl rounded">
+        <div className="flex items-center  p-3 gap-5 text-primary bg-white text-center text-2xl rounded">
           <p className="">{isSuccess}</p>{" "}
           <i className="fa-solid fa-circle-check mt-[.233rem]"></i>
         </div>
@@ -82,7 +82,7 @@ export default function Form() {
       )}
       {/* Error Message */}
       {isError ? (
-        <div className="flex items-center p-3 gap-5 text-inkBlue bg-white text-center text-2xl rounded">
+        <div className="flex items-center p-3 gap-5 text-primary bg-white text-center text-2xl rounded">
           <p className="text-red-400">{errorMessage}</p>{" "}
           {/* <i className="fa-solid fa-circle-xmark"></i> */}
         </div>
@@ -102,7 +102,7 @@ export default function Form() {
           type="text"
           value={formData.name}
           onChange={handleInputChange}
-          className="focus:outline-none p-2 rounded border-b-4 border-inkBlue text-inkBlue"
+          className="focus:outline-none p-2 rounded border-b-4 border-primary text-primary"
         />
 
         <input
@@ -111,7 +111,7 @@ export default function Form() {
           type="email"
           value={formData.email}
           onChange={handleInputChange}
-          className="focus:outline-none p-2 rounded border-b-4 border-inkBlue text-inkBlue"
+          className="focus:outline-none p-2 rounded border-b-4 border-primary text-primary"
         />
         <button
           className="bg-white rounded px-[4rem] py-[0.5rem] text-2xl font-bold"

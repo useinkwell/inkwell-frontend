@@ -28,7 +28,7 @@ export default function Nav() {
           />
         </Link>
         <div className="nav__menu flex items-center">
-          <button className="hidden sm:block bg-gradient-to-b from-[#000F55] to-[#B30048] rounded-lg text-base text-white font-semibold items-center px-8 py-2 md:py-4">
+          <button className="hidden sm:block bg-gradient-to-b from-secondary to-[#B30048] rounded-lg text-base text-white font-semibold items-center px-8 py-2 md:py-4">
             <Link href="#join">
               Sign Up
             </Link>
@@ -57,7 +57,7 @@ export default function Nav() {
         <i className="fa-solid fa-xmark absolute top-3 right-5 z-[6] text-3xl" onClick={closeNav}></i>
         <div className="grid grid-col-3 top-[10%] left-[20%] absolute justify-center 
      content-center gap-y-12">
-          <Link href="#join" className="text-white bg-gradient-to-b from-[#000F55]  to-[#B20048] px-8 py-1 rounded
+          <Link href="#join" className="text-white bg-gradient-to-b from-secondary  to-[#B20048] px-8 py-1 rounded
       relative right-[10%]">
             Sign Up
           </Link>
