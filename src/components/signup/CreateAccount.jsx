@@ -1,6 +1,6 @@
 import Image from "next/image";
 import inkwellLogo from "/public/images/inkwell.svg";
-import signupImage from "/public/images/signup-image2.png";
+import signupImage from "/public/images/signup-image3.png";
 import styles from "./signup.module.css";
 import { useState } from "react";
 
@@ -105,22 +105,22 @@ function CreateAccount() {
         <div className="2xl:flex 2xl:items-center ml-auto 2xl:flex-row-reverse 2xl:w-[70%] mt-5">
           <Image
             src={signupImage}
-            className="mx-auto 2xl:w-[411px]"
-            width={159}
-            height={117}
+            className="mx-auto w-[200px] h-[200px] 2xl:w-[411px] 2xl:h-[373px] mb-12"
+            width={500}
+            height={500}
           />
           {/* Form */}
-          <form className="w-[85%] sm:w-[28.65rem] mx-auto flex flex-col gap-4 justify-center text-2xl lg:text-3xl 2xl:text-3xl 2xl:mt-5">
+          <form className="w-[85%] sm:w-[28.65rem] mx-auto flex flex-col gap-4 justify-center text-2xl lg:text-3xl 2xl:text-2xl 2xl:mt-5">
             <CustomInput name="First Name" />
             <CustomInput name="LastName" />
             <CustomInput name="UserName" />
             <CustomInput name="Password" inputtype="password" />
             <CustomInput name="Confirm Password" inputtype="password" />
             <CustomInput name="Select Field" inputtype="select" />
-            <button className="w-[85%] sm:w-[25.65rem] flex items-center justify-center mt-5 font-bold text-white text-xl mx-auto px-3 py-2 rounded-lg bg-gradient-to-t from-secondary to-primary">
+            <button className="w-[85%] sm:w-[25.65rem] flex items-center justify-center mt-1 font-bold text-white text-xl mx-auto px-3 py-2 rounded-lg bg-gradient-to-t from-secondary to-primary">
               Submit
             </button>
-          <p className="underline text-xl text-center mt-2">Have an account? Log In</p>
+          <p className="underline text-xl text-center mt-1">Have an account? Log In</p>
           </form>
         </div>
       </div>

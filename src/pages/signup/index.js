@@ -1,6 +1,6 @@
 import CreateAccount from "@/components/signup/CreateAccount";
 
-function signupPage() {
+function SignupPage() {
     return ( 
     <div>
         <CreateAccount/>
@@ -8,4 +8,4 @@ function signupPage() {
     );
 }
 
-export default signupPage;
+export default SignupPage;
