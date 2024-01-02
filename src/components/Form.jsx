@@ -48,7 +48,7 @@ export default function Form() {
         "Content-Type": "multipart/form-data",
       };
       const response = await axios.post(
-        `${url}`,
+        url,
         form,
         { headers }
       );
