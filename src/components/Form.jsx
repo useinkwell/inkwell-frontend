@@ -33,7 +33,7 @@ export default function Form() {
 
   const handleInputChange = (event) => {
     setData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
+    // console.log(formData);
   };
 
   const handleSubmit = async (event) => {
@@ -53,7 +53,7 @@ export default function Form() {
         { headers }
       );
 
-      console.log(response.status);
+      // console.log(response.status);
       if (response.status == 200) {
         setIsSuccess("You're added to the waitlist");
       }
@@ -62,7 +62,7 @@ export default function Form() {
       setTimeout(clearForm, 7000);
       setTimeout(clearMessage, 7000);
     } catch (error) {
-      console.error("An error occured: ", error);
+      // console.error("An error occured: ", error);
       setIsError(true);
       setErrorMessage("an error occured try again");
       setTimeout(clearForm, 7000);
