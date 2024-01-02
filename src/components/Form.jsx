@@ -4,6 +4,7 @@ import axios from "axios";
 export default function Form() {
   // const apiKey = 'PMIb9gs716ERZ9tmRjTEtjdAhzsyBIPO3J0';
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+  const url = process.env.NEXT_PUBLIC_URL;
 
   // console.log(process.env.KEY);
 
@@ -47,7 +48,7 @@ export default function Form() {
         "Content-Type": "multipart/form-data",
       };
       const response = await axios.post(
-        "https://inkwell-backend.onrender.com/api/add",
+        `${url}`,
         form,
         { headers }
       );
