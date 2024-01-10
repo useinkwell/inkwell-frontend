@@ -58,7 +58,7 @@ export default function Home() {
 
         </div>
         <article className="flex relative py-20 px-14 sm:pt-[13rem] md:px-[5rem] items-center 
-        lg:justify-end lg:items-start sm:pb-[12rem] md:pb-[20rem] h-[962px]">
+        lg:justify-end lg:items-start sm:pb-[12rem] md:pb-[20rem] md:h-[962px]">
 
           <Image
             src={secondSlide}

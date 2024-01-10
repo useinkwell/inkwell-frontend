@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import BarLoader from "react-spinners/BarLoader";
 
 export default function Form() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -23,6 +24,7 @@ export default function Form() {
   const [isSuccess, setIsSuccess] = useState();
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [formData, setData] = useState({
     name: "",
@@ -34,6 +36,7 @@ export default function Form() {
   };
 
   const handleSubmit = async (event) => {
+    setLoading(true);
     event.preventDefault();
     try {
       const form = new FormData();
@@ -51,6 +54,7 @@ export default function Form() {
       );
 
       if (response.status == 200) {
+        setLoading(false)
         setIsSuccess("You're added to the waitlist");
       }
 
@@ -113,9 +117,10 @@ export default function Form() {
           className="bg-white rounded px-[4rem] py-[0.5rem] text-2xl font-bold"
           type="submit"
         >
-          <span className="gradient-text">Join the wait-list</span>
+          {loading ? <BarLoader color="#000F55" size={100}/> :<span className="gradient-text"> Join the wait-list</span>}
         </button>
       </form>
+      
       {/* Email succes message */}
 
       {/* Email failed message */}
