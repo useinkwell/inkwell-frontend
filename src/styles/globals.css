@@ -29,3 +29,7 @@ html{
     .custom-button-styles{
       @apply flex items-center font-bold text-white text-xl mx-auto px-3 py-2 rounded-lg bg-gradient-to-t from-secondary to-primary;
     }
+    
+    .custom-gradient-background{
+      background:  linear-gradient(180deg, #000F55 31.77%, #B20048 84.9%);
+    }

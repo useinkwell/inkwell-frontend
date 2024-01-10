@@ -28,7 +28,7 @@ export default function Nav() {
           />
         </Link>
         <div className="nav__menu flex items-center">
-          <button className="hidden sm:block bg-gradient-to-b from-secondary to-[#B30048] rounded-lg text-base text-white font-semibold items-center px-8 py-2 md:py-4">
+          <button className="hidden sm:block  custom-gradient-background rounded-lg text-base text-white font-semibold items-center px-8 py-2 md:py-4">
             <Link href="#join">
               Sign Up
             </Link>
