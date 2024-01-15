@@ -49,7 +49,7 @@ export default function Home() {
           />
 
 
-          <div className="sm:hidden z-[3] flex items-center justify-center h-11 w-32 bg-gradient-to-b from-secondary to-[#B20048] p-1 rounded font-semibold absolute bottom-4 right-4">
+          <div className="sm:hidden z-[3] flex items-center justify-center h-11 w-32 custom-gradient-background p-1 rounded font-semibold absolute bottom-4 right-4">
             <div className="bg-white p-2 rounded w-full h-full text-center flex items-center justify-center ">
               <Link className="text-xl" href="#join"> Sign Up</Link>
             </div>

@@ -15,10 +15,9 @@ export default function Nav() {
     navwidthreset("w-0");
   }
 
-
   return (
     <>
-      <nav  className="px-8 py-4 flex justify-between flex-wrap content-center fixed w-full z-[5] bg-white">
+      <nav className="px-8 py-4 flex justify-between flex-wrap content-center fixed w-full z-[5] bg-white">
         <Link href="#home">
           <Image
             src="/images/inkwell.png"
@@ -29,9 +28,7 @@ export default function Nav() {
         </Link>
         <div className="nav__menu flex items-center">
           <button className="hidden sm:block  custom-gradient-background rounded-lg text-base text-white font-semibold items-center px-8 py-2 md:py-4">
-            <Link href="#join">
-              Sign Up
-            </Link>
+            <Link href="#join">Sign Up</Link>
           </button>
           <div className="hidden md:flex items-center">
             <button className="text-base text-[#000] font-semibold px-8">
@@ -42,7 +39,10 @@ export default function Nav() {
             </button>
           </div>
         </div>
-        <div className="bars py-[.8rem] px-[.8rem] md:hidden text-2xl" onClick={openNav}>
+        <div
+          className="bars py-[.8rem] px-[.8rem] md:hidden text-2xl"
+          onClick={openNav}
+        >
           <i className="fa-solid fa-bars"></i>
         </div>
       </nav>
@@ -53,35 +53,34 @@ export default function Nav() {
         */}
       {/* side-nav */}
 
-      <div className={`bg-white ${navWidth} overflow-hidden md:hidden transition-all duration-100 ease-in-out z-[5] fixed inset-y-0 right-0`}>
-        <i className="fa-solid fa-xmark absolute top-3 right-5 z-[6] text-3xl" onClick={closeNav}></i>
-        <div className="grid grid-col-3 top-[10%] left-[20%] absolute justify-center 
-     content-center gap-y-12">
-          <Link href="#join" className="text-white bg-gradient-to-b from-secondary  to-[#B20048] px-8 py-1 rounded
-      relative right-[10%]">
+      <div
+        className={`bg-white ${navWidth} overflow-hidden md:hidden transition-all duration-100 ease-in-out z-[5] fixed inset-y-0 right-0`}
+      >
+        <i
+          className="fa-solid fa-xmark absolute top-3 right-5 z-[6] text-3xl"
+          onClick={closeNav}
+        ></i>
+        <div
+          className="grid grid-col-3 top-[10%] left-[20%] absolute justify-center 
+     content-center gap-y-12"
+        >
+          <Link
+            href="#join"
+            className="text-white px-8 py-1 rounded
+      relative right-[10%] sm:hidden custom-gradient-background"
+          >
             Sign Up
           </Link>
           <div className="flex gap-[.4rem] align-center">
-            <Image
-              src={loginIcon}
-              alt="log in icon"
-              width={25}
-              height={25}
-            />
+            <Image src={loginIcon} alt="log in icon" width={25} height={25} />
             <Link href="/">Login</Link>
           </div>
           <div className="flex gap-[.4rem] align-center">
-            <Image
-            alt="log in icon"
-              src={aboutIcon}
-              width={25}
-              height={25}
-            />
+            <Image alt="log in icon" src={aboutIcon} width={25} height={25} />
             <Link href="/">About Us</Link>
           </div>
         </div>
       </div>
-
     </>
   );
 }
