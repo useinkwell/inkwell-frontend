@@ -3,12 +3,12 @@ import futureTech from "../../../../public/images/future-image.png";
 import bookmark from "../../../../public/icons/bookmark.svg";
 import profileImg from "../../../../public/images/profile-img.jpg";
 
-function TopicCards() {
+function TopicCards({title}) {
   return (
-    <div className="flex flex-col w-72">
+    <div className="flex flex-col min-w-[288px] w-[288px]">
       {/* title and Caption */}
       <div className="pb-2 px-4">
-        <h3 className="font-semibold text-sm">Future of Tech</h3>
+        <h3 className="font-semibold text-sm">{title}</h3>
         <p className="font-normal text-xs">Add caption</p>
       </div>
       {/* image */}
@@ -19,7 +19,7 @@ function TopicCards() {
       <div className="py-5 px-4 flex items-center justify-between">
         <div className="flex gap-2 items-center">
           <div className="relative h-10 w-10">
-            <Image src={profileImg} alt="some image desscription" fill className="rounded-full object-cover"/>
+            <Image src={profileImg} alt="profile photo" fill className="rounded-full object-cover"/>
           </div>
           <div>
           <h3 className="text-sm font-semibold">Username </h3>

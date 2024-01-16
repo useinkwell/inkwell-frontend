@@ -1,13 +1,19 @@
 import TopicCards from "./TopicCards";
 
-function Topics() {
+function Topics({niche, title, caption}) {
   return (
-    <div className="py-20 px-11">
+    <div className="py-10 px-5">
       {/* Topic name */}
-      <h1 className="text-4xl">#copywritng</h1>
+      <h1 className="text-4xl">{niche}</h1>
       {/* cards */}
-      <div className="pt-5">
-        <TopicCards />
+      <div className="flex gap-3 overflow-scroll scrollbar-hide p-5 w-full">
+        <TopicCards title={title} caption={caption}/>
+        <TopicCards title={title} caption={caption}/>
+        <TopicCards title={title} caption={caption}/>
+        <TopicCards title={title} caption={caption}/>
+        <TopicCards title={title} caption={caption}/>
+        <TopicCards title={title} caption={caption}/>
+        <TopicCards title={title} caption={caption}/>
       </div>
     </div>
   );
