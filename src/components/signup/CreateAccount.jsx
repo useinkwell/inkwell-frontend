@@ -1,88 +1,9 @@
 import Image from "next/image";
 import inkwellLogo from "/public/images/inkwell.svg";
 import signupImage from "/public/images/signup-image3.png";
-import styles from "./signup.module.css";
-import { useState } from "react";
-
-// custom input form
-const CustomInput = ({ name, inputtype }) => {
-  const [isInputActive, setIsInputActive] = useState(false);
-
-  const handleInputFocus = () => {
-    setIsInputActive(true);
-  };
-
-  const handleInputBlur = () => {
-    setIsInputActive(false);
-  };
-  // if the input is in focus add the style to div if not remove it
-
-  return (
-    <div>
-      {inputtype === "password" ? (
-        <div
-          className={` ${
-            isInputActive ? styles.active : styles.notActive
-          }`}
-        >
-          <input
-            placeholder={name}
-            name="password"
-            type="password"
-            className={`w-full px-4 py-2  border border-[#9F9999] outline-none rounded-xl box-border text-gray-700 
-            border-solid ${styles.borderGradientOrangePink} focus:border-none`}
-            onFocus={handleInputFocus}
-            onBlur={handleInputBlur}
-            // className="w-full focus:outline-none p-2 rounded-xl  border-2 border-primary text-primary"
-          />
-        </div>
-      ) : inputtype === "select" ? (
-        <div className={` ${isInputActive ? styles.active : styles.notActive}`}>
-          <select
-            placeholder={name}
-            name="field"
-            type="select"
-            className={`w-full px-4 py-2 border border-[#9F9999] outline-none rounded-xl box-border text-gray-700 
-            border-solid ${styles.borderGradientOrangePink} focus:border-none`}
-            onFocus={handleInputFocus}
-            onBlur={handleInputBlur}
-            // className="w-full focus:outline-none p-2 rounded-xl  border-2 border-primary text-primary"
-          >
-            <option>blog</option>
-            <option>blog</option>
-            <option>linkelas blog</option>
-          </select>
-        </div>
-      ) : (
-        <div className={` ${isInputActive ? styles.active : styles.notActive}`}>
-          <input
-            placeholder={name}
-            name="name"
-            inputtype="text"
-            className={`w-full px-4 py-2 border border-[#9F9999] outline-none rounded-xl box-border text-gray-700 
-            border-solid ${styles.borderGradientOrangePink} focus:border-none`}
-            onFocus={handleInputFocus}
-            onBlur={handleInputBlur}
-            // className="w-full focus:outline-none p-2 rounded-xl  border-2 border-primary text-primary"
-          />
-        </div>
-      )}
-    </div>
-
-    // <div className={` ${isInputActive ? styles.active : styles.notActive}`}>
-    //   <input
-    //     placeholder={name}
-    //     name="name"
-    //     inputtype="text"
-    //     className={` w-full px-4 py-2 border border-[#9F9999] outline-none rounded-xl box-border text-gray-700
-    //         border-solid ${styles.borderGradientOrangePink} focus:border-none`}
-    //     onFocus={handleInputFocus}
-    //     onBlur={handleInputBlur}
-    //     // className="w-full focus:outline-none p-2 rounded-xl  border-2 border-primary text-primary"
-    //   />
-    // </div>
-  );
-};
+// import { useState } from "react";
+import CustomInput from "../forms/CustomInput";
+import Button from "../buttons/Button";
 
 function CreateAccount() {
   return (
@@ -117,9 +38,7 @@ function CreateAccount() {
             <CustomInput name="Password" inputtype="password" />
             <CustomInput name="Confirm Password" inputtype="password" />
             <CustomInput name="Select Field" inputtype="select" />
-            <button className="w-[85%] sm:w-[25.65rem] flex items-center justify-center mt-1 font-bold text-white text-xl mx-auto px-3 py-2 rounded-lg bg-gradient-to-t from-secondary to-primary">
-              Submit
-            </button>
+            <Button.Submit/>
           <p className="underline text-xl text-center mt-1">Have an account? Log In</p>
           </form>
         </div>

@@ -1,4 +1,4 @@
-import TopicCards from "./TopicCards";
+import TopicCards from "../TopicCards";
 
 function Topics({niche, title, caption}) {
   return (

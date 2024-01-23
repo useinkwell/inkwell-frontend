@@ -2,34 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-    scroll-behavior: smooth;
-  }
-  
-  .gradient-text{
-      background: linear-gradient(to bottom, #000F55, #B20048);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  
-    .gradient{
-      background-image: linear-gradient(to bottom, #000F55, #B20048);;
-    }
-    .border-gradient-custom{
-      border-image: linear-gradient(to bottom, #000F55, #B20048);
-    }
-  
-    .button {
-      border-image: linear-gradient(to bottom, #000F55, #B20048);
-      border-image-slice: 1;
-      
-    }
-    
-    .custom-button-styles{
-      @apply flex items-center font-bold text-white text-xl mx-auto px-3 py-2 rounded-lg bg-gradient-to-t from-secondary to-primary;
-    }
-    
-    .custom-gradient-background{
-      background:  linear-gradient(180deg, #000F55 31.77%, #B20048 84.9%);
-    }
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient-text {
+  background: linear-gradient(to bottom, #000F55, #B20048);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient {
+  background-image: linear-gradient(to bottom, #000F55, #B20048);
+  ;
+}
+
+.border-gradient-custom {
+  border-image: linear-gradient(to bottom, #000F55, #B20048);
+}
+
+.button {
+  border-image: linear-gradient(to bottom, #000F55, #B20048);
+  border-image-slice: 1;
+
+}
+
+.custom-button-styles {
+  @apply flex items-center text-white text-xl mx-auto px-3 py-2 rounded-lg bg-gradient-to-t from-secondary to-primary;
+}
+
+.custom-gradient-background {
+  background: linear-gradient(180deg, #000F55 31.77%, #B20048 84.9%);
+}
+
+.button-effect {
+  @apply active:scale-95 active:bg-gray-500 transition transform duration-100 ease-out
+}

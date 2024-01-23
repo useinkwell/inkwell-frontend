@@ -1,11 +1,11 @@
 import Image from "next/image";
-import futureTech from "../../../../public/images/future-image.png";
-import bookmark from "../../../../public/icons/bookmark.svg";
-import profileImg from "../../../../public/images/profile-img.jpg";
+import futureTech from "../../../public/images/future-image.png";
+import bookmark from "../../../public/icons/bookmark.svg";
+import profileImg from "../../../public/images/profile-img.jpg";
 
 function TopicCards({title}) {
   return (
-    <div className="flex flex-col min-w-[288px] w-[288px]">
+    <div className="flex flex-col min-w-[288px] w-auto">
       {/* title and Caption */}
       <div className="pb-2 px-4">
         <h3 className="font-semibold text-sm">{title}</h3>

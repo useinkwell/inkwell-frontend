@@ -1,8 +1,9 @@
 import Link from "next/link";
 // import Image from "next/image";
 // import ExploreNav from "./ExploreNav";
-import Nav from "../Nav";
+import Nav from "../../navigations/Nav";
 import Topics from "./Topics";
+import Footer from "@/components/Footer";
 
 function Explore() {
   return (
@@ -13,6 +14,7 @@ function Explore() {
         <Topics niche="#poetry" title="Drifting"/>
         <Topics niche="#contentwriting" title="12 Content Writing Ideas"/>
       </div>
+      <Footer/>
     </div>
   );
 }
