@@ -5,10 +5,11 @@ import profileImg from "../../../public/images/profile-img.jpg";
 import blogImage from "../../../public/images/blog-cover-image.png";
 import Button from "../buttons/Button";
 import Footer from "../Footer";
+import Comments from "./comments/Comments";
 
 function Article() {
   return (
-    <div>
+    <div className="relative">
       <Nav />
       <div className="min-[834px]:px-10 max-w-[1084px] mx-auto">
         {/* Header -title cover image caption,.......*/}
@@ -104,6 +105,7 @@ function Article() {
           </div>
         </div>
       </div>
+      <Comments/>
         {/* Footer */}
       <Footer/>  
     </div>

@@ -8,6 +8,7 @@ import notification from "../../../public/icons/bell-icon.svg";
 import logout from "../../../public/icons/login.svg";
 import close from "../../../public/icons/close.svg";
 import Search from "./Search";
+import Notification from "./Notifications";
 function Nav() {
   return (
     <div>
@@ -70,7 +71,7 @@ function Nav() {
         </div>
       </div>
       {/* mobile nav */}
-      <div className="bg-white fixed top-0 bottom-0 right-0 w-1/2 z-20 h-screen">
+      <div className="bg-white fixed top-0 bottom-0 right-0 w-1/2 z-20 h-screen hidden">
         <div className="h-10 w-10 absolute right-5 top-10 z-20">
           <Image src={close} fill alt="icon" />
         </div>
@@ -117,9 +118,11 @@ function Nav() {
         </div>
       </div>
       {/* Dark overlay */}
-      <div className="fixed top-0 bottom-0 left-0 right-0 bg-black opacity-20 z-10"></div>
+      <div className="fixed top-0 bottom-0 left-0 right-0 bg-black opacity-20 z-10 hidden"></div>
       {/* Search */}
-      <Search/>
+      {/* <Search/> */}
+      {/* Notification */}
+      {/* <Notification/> */}
     </div>
   );
 }
