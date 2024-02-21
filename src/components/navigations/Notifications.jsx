@@ -16,7 +16,7 @@ function NotificationComponents() {
 
 function Notification() {
   return (
-    <div className="absolute z-10 top-0 bottom-0 left-0 right-0 bg-white pt-10 lg:w-6/12 lg:right-0 lg:left-2/4">
+    <div className="lucida fixed overflow-auto z-10 top-0 bottom-0 left-0 right-0 bg-white pt-10 lg:w-6/12 lg:right-0 lg:left-2/4">
       <div className="flex items-center">
         <div className="flex gap-2 items-center mx-auto">
           <Image src={bell} alt="bell icon" width={30} height={30} />

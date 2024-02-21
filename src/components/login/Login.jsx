@@ -6,7 +6,7 @@ import Button from "../buttons/Button";
 import wavyLines from "../../../public/images/wavy-lines.png";
 function Login() {
   return (
-    <div>
+    <div className="lucida">
       <div className="flex flex-col gap-0 justify-start content-center">
         <Image
           alt="inkwell logo"

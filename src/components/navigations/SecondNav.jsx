@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function SecondNav() {
   return (
-    <div className="px-5 flex justify-between items-center mx-auto shadow-lg rounded-b-2xl">
+    <div className="pt-sans-regular px-5 flex justify-between items-center mx-auto shadow-lg rounded-b-2xl lg:hidden">
       <div className="relative h-12 w-12">
         <Image src={backIcon} fill alt="arrow-left icon" />
       </div>
@@ -14,7 +14,7 @@ function SecondNav() {
         </div>
         <h3>Write</h3>
       </div>
-      <i className="fa-solid fa-bars sm:hidden pr-5 text-xl"></i>
+      <i className="fa-solid fa-bars  pr-5 text-xl"></i>
     </div>
   );
 }

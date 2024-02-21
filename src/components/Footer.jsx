@@ -6,8 +6,8 @@ function Footer() {
   return (
     <div>
       {/*  */}
-      <div className="text-[#757575] text-lg sm:text-xl flex flex-col gap-20 md:gap-20 pt-40 px-10 md:flex-row items-start justify-between">
-        <div className="flex flex-col gap-3">
+      <div className="lucida max-w-[1500px] mx-auto text-[#757575] text-lg sm:text-xl flex flex-col gap-20 md:gap-20 pt-40 px-10 md:flex-row items-start justify-between">
+        <div className="flex flex-col gap-3 ">
           <Link className="" href="#">
             HomePage
           </Link>

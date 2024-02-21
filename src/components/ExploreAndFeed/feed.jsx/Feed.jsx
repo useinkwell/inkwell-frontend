@@ -4,7 +4,7 @@ import TopicCards from "../TopicCards";
 
 function Feed() {
   return (
-    <div>
+    <div  className="lucida">
       <Nav />
       {/*  */}
       <div

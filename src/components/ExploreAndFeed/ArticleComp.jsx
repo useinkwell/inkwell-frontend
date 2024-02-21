@@ -11,7 +11,7 @@ function Article() {
   return (
     <div className="relative">
       <Nav />
-      <div className="min-[834px]:px-10 max-w-[1084px] mx-auto">
+      <div className="min-[834px]:px-10 max-w-[1084px] mx-auto lucida">
         {/* Header -title cover image caption,.......*/}
         <div>
           {/* profile Photo, follow button, bookmark button */}

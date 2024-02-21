@@ -12,7 +12,7 @@ import Notification from "./Notifications";
 function Nav() {
   return (
     <div>
-      <div className="mx-auto shadow-lg rounded-b-3xl">
+      <div className="pt-sans-regular mx-auto shadow-lg rounded-b-3xl">
         {/* Navigation */}
         {/* top navigation */}
         <div className="flex items-start justify-between max-w-5xl mx-auto h-24">
@@ -61,7 +61,7 @@ function Nav() {
           <div className="text-white custom-gradient-background py-1 px-2 rounded-md flex items-center ml-10">
             <h4>Write</h4>
             <Image
-              src="/icons/pen.svg"
+              src="/icons/penwhite.svg"
               className="h-5 w-8"
               width={10}
               height={10}
@@ -71,7 +71,7 @@ function Nav() {
         </div>
       </div>
       {/* mobile nav */}
-      <div className="bg-white fixed top-0 bottom-0 right-0 w-1/2 z-20 h-screen hidden">
+      <div className="pt-sans-regular bg-white fixed top-0 bottom-0 right-0 w-1/2 z-20 h-screen hidden">
         <div className="h-10 w-10 absolute right-5 top-10 z-20">
           <Image src={close} fill alt="icon" />
         </div>

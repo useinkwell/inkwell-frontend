@@ -2,7 +2,7 @@ import CreateAccount from "@/components/signup/CreateAccount";
 
 function SignupPage() {
     return ( 
-    <div>
+    <div className="lucida">
         <CreateAccount/>
     </div> 
     );

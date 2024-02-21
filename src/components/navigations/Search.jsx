@@ -3,7 +3,7 @@ import close from "../../../public/icons/close.svg";
 
 function Search() {
   return (
-    <div className="fixed z-30 top-0 bottom-0 left-0 right-0 bg-white h-screen flex flex-col xl:w-[50%]">
+    <div className="lucida fixed overflow-auto z-30 top-0 bottom-0 left-0 right-0 bg-white h-screen flex flex-col xl:w-[50%]">
       <div>
         <div className="h-10 w-10 absolute left-5 top-10 z-20">
           <Image src={close} fill alt="icon" />

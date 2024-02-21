@@ -54,7 +54,7 @@ function CommentComponent() {
 
 function Comments() {
   return (
-    <div className="absolute z-30 top-0 left-0 right-0 bg-white hidden">
+    <div className="lucida absolute z-30 top-0 left-0 right-0 bg-white hidden">
       <div className="pt-8 flex justify-center items-center">
         <div className="flex gap-2 justify-center">
           <div className="relative h-7 w-7">

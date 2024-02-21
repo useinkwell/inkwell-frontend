@@ -2,7 +2,7 @@ import Write from "../../components/publishFlow/Write.jsx";
 
 function Editor() {
   return (
-    <div>
+    <div className="lucida">
       <Write />
     </div>
   );

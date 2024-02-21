@@ -30,7 +30,7 @@ function AccountSuccess() {
             width={500}
             height={500}
           />
-          <button className=" custom-button-styles  w-[239px] justify-center items-center mt-10
+          <button className="pt-sans-regular custom-button-styles  w-[239px] justify-center items-center mt-10
            min-[1512px]:mt-0 min-[1512px]:absolute min-[1512px]:right-96 min-[1650px]:left-[40%] min-[1512px]:bottom-32">
             Continue{" "}
             <i className="fa-solid fa-arrow-right text-3xl md:text-4xl ml-4"></i>
