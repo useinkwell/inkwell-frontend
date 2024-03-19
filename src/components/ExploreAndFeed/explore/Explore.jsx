@@ -9,7 +9,7 @@ function Explore() {
   return (
     <div>
       <Nav />
-      <div>
+      <div >
         <Topics niche="#copywritng" title="Future of Tech"/>
         <Topics niche="#poetry" title="Drifting"/>
         <Topics niche="#contentwriting" title="12 Content Writing Ideas"/>

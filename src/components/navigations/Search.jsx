@@ -1,11 +1,25 @@
 import Image from "next/image";
 import close from "../../../public/icons/close.svg";
+import {  searchClose, closeOverlay } from "@/redux/slices/navSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 function Search() {
+  const dispatch = useDispatch();
+  const { searchWidth, searchWidthLarge } = useSelector((store) => store.mobileNav);
+
   return (
-    <div className="lucida fixed overflow-auto z-30 top-0 bottom-0 left-0 right-0 bg-white h-screen flex flex-col xl:w-[50%]">
+    <div
+      className={`${searchWidth} transition-all duration-300 ease-out lucida fixed overflow-auto 
+      z-30 top-0 bottom-0 left-0 right-0 bg-white h-screen flex flex-col xl:${searchWidthLarge}`}
+    >
       <div>
-        <div className="h-10 w-10 absolute left-5 top-10 z-20">
+        <div
+          onClick={() => {
+            dispatch(searchClose());
+            dispatch(closeOverlay());
+          }}
+          className="h-10 w-10 absolute left-5 top-10 z-20"
+        >
           <Image src={close} fill alt="icon" />
         </div>
 
@@ -27,8 +41,12 @@ function Search() {
             <div className="h-[2px] bg-[#E0E0E0] w-full mx-auto"></div>
             <div className="px-4 py-1 shadow-lg flex flex-col gap-4 min-[834px]:flex-row min-[834px]:justify-between min-[834px]:py-3">
               <div className="min-[834px]:flex items-center gap-6">
-                <h2 className="font-semibold text-base min-[834px]:text-xl">Future of Tech</h2>
-                <p className="text-xs text-[#9E9E9E] min-[834px]:text-base">by Username</p>
+                <h2 className="font-semibold text-base min-[834px]:text-xl">
+                  Future of Tech
+                </h2>
+                <p className="text-xs text-[#9E9E9E] min-[834px]:text-base">
+                  by Username
+                </p>
               </div>
               <h2 className="font-medium">Content Writing</h2>
             </div>
@@ -39,7 +57,9 @@ function Search() {
                 <h2 className="font-semibold text-base min-[834px]:text-xl">
                   12 Content Writing Ideas
                 </h2>
-                <p className="text-xs text-[#9E9E9E] min-[834px]:text-base">by Username</p>
+                <p className="text-xs text-[#9E9E9E] min-[834px]:text-base">
+                  by Username
+                </p>
               </div>
               <h2 className="font-medium">Content Writing</h2>
             </div>

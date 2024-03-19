@@ -51,7 +51,7 @@ function Article() {
           </div>
           {/* Title and caption */}
           <div className="flex flex-col gap-2 mt-4 px-10 min-[834px]:px-0 lg:px-5">
-            <h1 className="text-2xl leading-4 font-semibold">
+            <h1 className="text-2xl leading-8 font-semibold">
               12 Content Writing Ideas
             </h1>
             <p className="text-base font-normal leading-4">Add caption</p>

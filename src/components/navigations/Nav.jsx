@@ -9,7 +9,76 @@ import logout from "../../../public/icons/login.svg";
 import close from "../../../public/icons/close.svg";
 import Search from "./Search";
 import Notification from "./Notifications";
+import React, { useState, useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  navOpen,
+  navClose,
+  showOverlay,
+  closeOverlay,
+  openOverlay,
+  searchOpen,
+  updateAnythingState,
+  anythingClose,
+  anythingOpen,
+} from "@/redux/slices/navSlice";
+// const navWidthClosed = "w-0";
+// const navWidthOpen = "w-1/2";
+
 function Nav() {
+  const mobileNav = useRef(null);
+  const search = useRef(null);
+  const {
+    navWidthClosed,
+    navWidthOpen,
+    overlayState,
+    navIsOpen,
+    navWidthState,
+    isAnythingOpen,
+    searchWidth,
+  } = useSelector((store) => store.mobileNav);
+  const dispatch = useDispatch();
+
+  const [mobileDivWidth, setMobileDivWidth] = useState(null);
+  const [prevWidth, setPrevWidth] = useState(null);
+
+  useEffect(() => {
+    // Check if window is defined (only available on the client-side)
+    if (typeof window !== "undefined") {
+      // Access window.innerWidth when window is ready
+      setPrevWidth(window.innerWidth);
+    }
+    console.log(isAnythingOpen);
+  }, []);
+
+  // act on window resize
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        // handle mobile to desktop
+        const mobileNavWidth = mobileNav.current.getBoundingClientRect().width;
+        if (mobileNavWidth <= 0) {
+          dispatch(closeOverlay());
+        } else {
+          dispatch(showOverlay());
+        }
+        const searchWidth = search.current.getBoundingClientRect().width;
+        console.log(searchWidth);
+        // if(searchWidth <= 0){
+        //   dispatch(closeOverlay());
+        // }else{
+        //   dispatch(showOverlay())
+        // }
+      };
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, [prevWidth]);
+
+
   return (
     <div>
       <div className="pt-sans-regular mx-auto shadow-lg rounded-b-3xl">
@@ -19,12 +88,26 @@ function Nav() {
           {/* leftside */}
           <div href="/" className="relative w-24 h-14">
             <Link href="/">
-              <Image priority src="/images/inkwell.png" alt="nav bars" fill />
+              <Image
+                priority
+                src="/images/inkwell.png"
+                alt="inkwell logo"
+                fill
+              />
             </Link>
           </div>
           {/* right navigation */}
           <div className="relative pt-4 flex gap-5">
-            <i className="fa-solid fa-bars sm:hidden pr-5"></i>
+            <div
+              onClick={() => {
+                dispatch(navOpen());
+                dispatch(showOverlay());
+                dispatch(anythingOpen());
+              }}
+            >
+              <i className="fa-solid fa-bars sm:hidden pr-5"></i>
+            </div>
+
             <div className="relative h-5 w-8 hidden sm:flex">
               <Image src="/icons/folder-icon.svg" fill alt="icon" />
             </div>
@@ -71,12 +154,29 @@ function Nav() {
         </div>
       </div>
       {/* mobile nav */}
-      <div className="pt-sans-regular bg-white fixed top-0 bottom-0 right-0 w-1/2 z-20 h-screen hidden">
-        <div className="h-10 w-10 absolute right-5 top-10 z-20">
+      <div
+        className={`pt-sans-regular bg-white fixed top-0 bottom-0 right-0 overflow-hidden z-20 h-screen
+       ${navWidthState} sm:w-0 transition-all duration-300 ease-out`}
+        ref={mobileNav}
+      >
+        <div
+          className="h-10 w-10 absolute right-5 top-10 z-20"
+          onClick={() => {
+            dispatch(navClose());
+            dispatch(closeOverlay());
+            dispatch(anythingClose());
+          }}
+        >
           <Image src={close} fill alt="icon" />
         </div>
         <div className="h-screen flex flex-col items-start justify-start gap-10 pl-10 pt-28">
-          <div className="flex gap-3 items-center text-sm">
+          <div
+            className="flex gap-3 items-center text-sm"
+            onClick={() => {
+              dispatch(searchOpen());
+              dispatch(showOverlay());
+            }}
+          >
             <div className="relative h-5 w-5">
               <Image alt="search icon" src={searchIcon} fill />
             </div>
@@ -118,9 +218,11 @@ function Nav() {
         </div>
       </div>
       {/* Dark overlay */}
-      <div className="fixed top-0 bottom-0 left-0 right-0 bg-black opacity-20 z-10 hidden"></div>
+      <div
+        className={`fixed top-0 bottom-0 left-0 right-0 bg-black opacity-20 z-10 ${overlayState}`}
+      ></div>
       {/* Search */}
-      {/* <Search/> */}
+      <Search ref={search}/>
       {/* Notification */}
       {/* <Notification/> */}
     </div>
