@@ -18,7 +18,6 @@ import {
   closeOverlay,
   openOverlay,
   searchOpen,
-  updateAnythingState,
   anythingClose,
   anythingOpen,
 } from "@/redux/slices/navSlice";
@@ -27,7 +26,6 @@ import {
 
 function Nav() {
   const mobileNav = useRef(null);
-  const search = useRef(null);
   const {
     navWidthClosed,
     navWidthOpen,
@@ -35,11 +33,12 @@ function Nav() {
     navIsOpen,
     navWidthState,
     isAnythingOpen,
-    searchWidth,
+    searchIsOpen,
+    
   } = useSelector((store) => store.mobileNav);
   const dispatch = useDispatch();
 
-  const [mobileDivWidth, setMobileDivWidth] = useState(null);
+  // const [mobileDivWidth, setMobileDivWidth] = useState(null);
   const [prevWidth, setPrevWidth] = useState(null);
 
   useEffect(() => {
@@ -48,7 +47,6 @@ function Nav() {
       // Access window.innerWidth when window is ready
       setPrevWidth(window.innerWidth);
     }
-    console.log(isAnythingOpen);
   }, []);
 
   // act on window resize
@@ -59,11 +57,12 @@ function Nav() {
         const mobileNavWidth = mobileNav.current.getBoundingClientRect().width;
         if (mobileNavWidth <= 0) {
           dispatch(closeOverlay());
+          dispatch(navClose())
         } else {
           dispatch(showOverlay());
+          dispatch(navOpen())
         }
-        const searchWidth = search.current.getBoundingClientRect().width;
-        console.log(searchWidth);
+       
         // if(searchWidth <= 0){
         //   dispatch(closeOverlay());
         // }else{
@@ -78,6 +77,15 @@ function Nav() {
     }
   }, [prevWidth]);
 
+  useEffect(()=>{
+    if(navIsOpen || searchIsOpen){
+      dispatch(showOverlay())
+    
+    }else{
+      dispatch(closeOverlay())
+      
+    }
+  },[isAnythingOpen, searchIsOpen])
 
   return (
     <div>
@@ -222,7 +230,7 @@ function Nav() {
         className={`fixed top-0 bottom-0 left-0 right-0 bg-black opacity-20 z-10 ${overlayState}`}
       ></div>
       {/* Search */}
-      <Search ref={search}/>
+      <Search/>
       {/* Notification */}
       {/* <Notification/> */}
     </div>

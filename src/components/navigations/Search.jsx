@@ -1,23 +1,46 @@
 import Image from "next/image";
 import close from "../../../public/icons/close.svg";
-import {  searchClose, closeOverlay } from "@/redux/slices/navSlice";
+import {
+  searchClose,
+  closeOverlay,
+  showOverlay,
+  checkAnything,
+  navClose
+} from "@/redux/slices/navSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { useRef, useEffect, useState } from "react";
 
 function Search() {
   const dispatch = useDispatch();
-  const { searchWidth, searchWidthLarge } = useSelector((store) => store.mobileNav);
+  const { searchWidth, searchWidthLarge, isAnythingOpen } = useSelector(
+    (store) => store.mobileNav
+  );
+  // const searchRef = useRef(null);
+  // const search = searchRef.current.getBoundingClientRect().width;
+  // const [searchWidthState, setSearchWidthState] = useState(0);
+
+    function closeSearchFunction(){
+      dispatch(searchClose());
+      dispatch(closeOverlay());
+      if(typeof window !== "undefined"){
+        if(window.innerWidth > 640){
+          dispatch(navClose());
+        }
+
+      }
+      dispatch(checkAnything())
+    }
+    
 
   return (
     <div
+      // ref={searchRef}
       className={`${searchWidth} transition-all duration-300 ease-out lucida fixed overflow-auto 
       z-30 top-0 bottom-0 left-0 right-0 bg-white h-screen flex flex-col xl:${searchWidthLarge}`}
     >
       <div>
         <div
-          onClick={() => {
-            dispatch(searchClose());
-            dispatch(closeOverlay());
-          }}
+          onClick={() => closeSearchFunction() }
           className="h-10 w-10 absolute left-5 top-10 z-20"
         >
           <Image src={close} fill alt="icon" />

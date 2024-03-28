@@ -53,6 +53,11 @@ const navSlice = createSlice({
     },
     anythingClose:(state, action) => {
       state.isAnythingOpen = false;
+    },
+    checkAnything:(state, action) =>{
+      if(state.navIsOpen || state.searchIsOpen){
+        state.isAnythingOpen = true;
+      }else{state.isAnythingOpen = false}
     }
   },
 });
@@ -67,7 +72,8 @@ export const {
   notificationOpen,
   updateAnythingState,
   anythingClose,
-  anythingOpen
+  anythingOpen,
+  checkAnything
 
 } = navSlice.actions;
 export default navSlice.reducer;
