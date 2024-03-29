@@ -5,7 +5,7 @@ import {
   closeOverlay,
   showOverlay,
   checkAnything,
-  navClose
+  navClose,
 } from "@/redux/slices/navSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useRef, useEffect, useState } from "react";
@@ -17,30 +17,31 @@ function Search() {
   );
   // const searchRef = useRef(null);
   // const search = searchRef.current.getBoundingClientRect().width;
-  // const [searchWidthState, setSearchWidthState] = useState(0);
+  const [currentSearchWidth, setCurrenttSearchWidth] = useState(0);
+  const searchRef = useRef(null);
 
-    function closeSearchFunction(){
-      dispatch(searchClose());
-      dispatch(closeOverlay());
-      if(typeof window !== "undefined"){
-        if(window.innerWidth > 640){
-          dispatch(navClose());
-        }
 
+  function closeSearchFunction() {
+    dispatch(searchClose());
+    dispatch(closeOverlay());
+    if (typeof window !== "undefined") {
+      if (window.innerWidth > 640) {
+        dispatch(navClose());
       }
-      dispatch(checkAnything())
     }
-    
+    // dispatch(checkAnything());
+  }
+  
 
   return (
     <div
-      // ref={searchRef}
+      ref={searchRef}
       className={`${searchWidth} transition-all duration-300 ease-out lucida fixed overflow-auto 
       z-30 top-0 bottom-0 left-0 right-0 bg-white h-screen flex flex-col xl:${searchWidthLarge}`}
     >
       <div>
         <div
-          onClick={() => closeSearchFunction() }
+          onClick={() => closeSearchFunction()}
           className="h-10 w-10 absolute left-5 top-10 z-20"
         >
           <Image src={close} fill alt="icon" />

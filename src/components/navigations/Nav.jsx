@@ -18,8 +18,8 @@ import {
   closeOverlay,
   openOverlay,
   searchOpen,
-  anythingClose,
-  anythingOpen,
+  updateAnything,
+  notificationOpen,
 } from "@/redux/slices/navSlice";
 // const navWidthClosed = "w-0";
 // const navWidthOpen = "w-1/2";
@@ -34,8 +34,9 @@ function Nav() {
     navWidthState,
     isAnythingOpen,
     searchIsOpen,
-    
+    notificationIsOpen,
   } = useSelector((store) => store.mobileNav);
+
   const dispatch = useDispatch();
 
   // const [mobileDivWidth, setMobileDivWidth] = useState(null);
@@ -54,21 +55,13 @@ function Nav() {
     if (typeof window !== "undefined") {
       const handleResize = () => {
         // handle mobile to desktop
-        const mobileNavWidth = mobileNav.current.getBoundingClientRect().width;
-        if (mobileNavWidth <= 0) {
-          dispatch(closeOverlay());
-          dispatch(navClose())
-        } else {
-          dispatch(showOverlay());
-          dispatch(navOpen())
+        // const mobileNavWidth = mobileNav.current.getBoundingClientRect().width;
+        if (window.innerWidth >= 640) {
+          dispatch(navClose());
+          dispatch(updateAnything());
         }
-       
-        // if(searchWidth <= 0){
-        //   dispatch(closeOverlay());
-        // }else{
-        //   dispatch(showOverlay())
-        // }
       };
+
       window.addEventListener("resize", handleResize);
 
       return () => {
@@ -77,15 +70,13 @@ function Nav() {
     }
   }, [prevWidth]);
 
-  useEffect(()=>{
-    if(navIsOpen || searchIsOpen){
-      dispatch(showOverlay())
-    
-    }else{
-      dispatch(closeOverlay())
-      
+  useEffect(() => {
+    if (navIsOpen || searchIsOpen) {
+      dispatch(showOverlay());
+    } else {
+      dispatch(closeOverlay());
     }
-  },[isAnythingOpen, searchIsOpen])
+  }, [isAnythingOpen, searchIsOpen]);
 
   return (
     <div>
@@ -110,7 +101,7 @@ function Nav() {
               onClick={() => {
                 dispatch(navOpen());
                 dispatch(showOverlay());
-                dispatch(anythingOpen());
+                dispatch(updateAnything());
               }}
             >
               <i className="fa-solid fa-bars sm:hidden pr-5"></i>
@@ -119,7 +110,13 @@ function Nav() {
             <div className="relative h-5 w-8 hidden sm:flex">
               <Image src="/icons/folder-icon.svg" fill alt="icon" />
             </div>
-            <div className="relative h-5 w-8 hidden sm:flex">
+            <div
+              onClick={() => {
+                dispatch(notificationOpen());
+                dispatch(showOverlay());
+              }}
+              className="relative h-5 w-8 hidden sm:flex"
+            >
               <Image src="/icons/bell-icon.svg" fill alt="icon" />
             </div>
             <div className="relative h-5 w-8 hidden sm:flex">
@@ -132,7 +129,13 @@ function Nav() {
         </div>
         {/* bottom */}
         <div className="max-w-4xl mx-auto px-2 md:px-0 grid grid-cols-2 md:grid-cols-3 place-items-center pb-2 text-primary text-base">
-          <div className="border-primary border-solid border-2 rounded-md px-5 hidden md:flex">
+          <div
+            onClick={() => {
+              dispatch(searchOpen());
+              dispatch(showOverlay());
+            }}
+            className="border-primary border-solid border-2 rounded-md px-5 hidden md:flex"
+          >
             <input
               type="text"
               className="focus:outline-none placeholder:text-primary placeholder:font-semibold"
@@ -172,7 +175,7 @@ function Nav() {
           onClick={() => {
             dispatch(navClose());
             dispatch(closeOverlay());
-            dispatch(anythingClose());
+            dispatch(updateAnything());
           }}
         >
           <Image src={close} fill alt="icon" />
@@ -210,7 +213,13 @@ function Nav() {
             </div>
             <p>Portfolio</p>
           </div>
-          <div className="flex gap-2 items-center text-sm">
+          <div
+            onClick={() => {
+              dispatch(notificationOpen());
+              dispatch(showOverlay());
+            }}
+            className="flex gap-2 items-center text-sm"
+          >
             <div className="relative h-5 w-5">
               <Image alt="search icon" src={notification} fill />
             </div>
@@ -230,9 +239,9 @@ function Nav() {
         className={`fixed top-0 bottom-0 left-0 right-0 bg-black opacity-20 z-10 ${overlayState}`}
       ></div>
       {/* Search */}
-      <Search/>
+      <Search />
       {/* Notification */}
-      {/* <Notification/> */}
+      <Notification />
     </div>
   );
 }
