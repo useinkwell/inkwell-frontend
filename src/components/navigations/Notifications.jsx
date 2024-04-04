@@ -20,21 +20,26 @@ function NotificationComponents() {
 
 function Notification() {
   const dispatch = useDispatch();
-  const { notificationWidth, notificationWidthLarge } = useSelector(
+  const { notificationWidth, notificationIsOpen } = useSelector(
     (store) => store.mobileNav
   );
 
-
   function closeNotificationFunction(){
     dispatch(notificationClose());
-    dispatch(updateAnything());
-    
+    if(typeof window !== "undefined"){
+        if(window.innerWidth > 640){
+          dispatch(closeOverlay());
+        }
+      dispatch(updateAnything());
+    }
+     
 
   }
 
   return (
     <div
-      className={`${notificationWidth} transition-all duration-300 ease-out lucida fixed overflow-auto z-20 top-0 bottom-0 right-0 bg-white pt-10 lg:${notificationWidthLarge} lg:right-0`}
+      className={`${notificationWidth} transition-all duration-300 ease-out lucida fixed 
+      overflow-auto z-20 top-0 bottom-0 right-0 bg-white pt-10 lg:right-0 ${notificationIsOpen ? 'lg:w-1/2' : 'lg:w-0'}`}
     >
       <div className="flex items-center">
         <div className="flex gap-2 items-center mx-auto">

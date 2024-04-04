@@ -10,8 +10,12 @@ import Readers from "./reads/Readers";
 import Reading from "./reads/Reading";
 import Share from "./Share";
 import AddPortfolio from "./AddPortfolio";
+import { readerOpen } from "@/redux/slices/readSlice";
+import { useDispatch } from "react-redux";
 
 function Profile() {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <div>
@@ -30,7 +34,7 @@ function Profile() {
           </div>
         </div>
         {/* Profile photo and.... */}
-        <div className="relative">
+        <div className="relative mx-auto max-w-[1927px]">
           {/* profile photo */}
           <div>
             <div
@@ -69,43 +73,50 @@ function Profile() {
                     y2="20"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop offset="0.317708" stop-color="#000F55" />
-                    <stop offset="0.848958" stop-color="#B30048" />
+                    <stop offset="0.317708" stopColor="#000F55" />
+                    <stop offset="0.848958" stopColor="#B30048" />
                   </linearGradient>
                 </defs>
               </svg>
             </div>
           </div>
+          {/* ----- */}
+          <div>
+            {/* ...name and stats */}
+            <div className="absolute top-0 left-24">
+              <div className="flex flex-col gap-1">
+                <h2 className="text-sm sm:text-lg font-semibold">John Doe</h2>
+                <div className="flex gap-1">
+                  <p className="text-xs sm:text-base text-[#757575] font-semibold">
+                    Content Writer
+                  </p>
+                  <Image src={tinyPen} alt="pen icon" width={10} height={10} />
+                </div>
+              </div>
+            </div>
 
-          {/* ...name and stats */}
-          <div className="absolute top-0 left-24">
-            <div className="flex flex-col gap-1">
-              <h2 className="text-sm sm:text-lg font-semibold">John Doe</h2>
-              <div className="flex gap-1">
-                <p className="text-xs sm:text-base text-[#757575] font-semibold">
-                  Content Writer
-                </p>
-                <Image src={tinyPen} alt="pen icon" width={10} height={10} />
+            <div
+              className="absolute flex right-0 items-center gap-5 top-[1rem]
+                 mr-3"
+            >
+              <div
+                className="text-xs"
+                onClick={() => dispatch(readerOpen())}
+              >
+                <p>Readers</p>
+                <p className="ml-3">200</p>
+              </div>
+
+              <div className="text-xs">
+                <p>Reading</p>
+                <p className="ml-3">200</p>
               </div>
             </div>
           </div>
-          <div
-            className="absolute flex right-0 items-center gap-5 top-[1rem]
-                 mr-3"
-          >
-            <div>
-              <p>Readers</p>
-              <p className="ml-3">200</p>
-            </div>
 
-            <div>
-              <p>Reading</p>
-              <p className="ml-3">200</p>
-            </div>
-          </div>
           <div className="mt-20 px-2 py-5 flex justify-between items-center max-w-[1349px] mx-auto">
-            <div className="flex gap-5 md:gap-20 items-center">
-              <div className="flex flex-col items-start">
+            <div className="text-sm flex gap-5 md:gap-20 items-center">
+              <div className="flex flex-col items-start text-secondary">
                 <p className="text-center">Published</p>
                 <p className="text-center ml-5">200</p>
               </div>
@@ -134,7 +145,7 @@ function Profile() {
       </div>
       {/* <AddPortfolio/> */}
       {/* <Share/> */}
-      {/* <Readers/> */}
+      <Readers />
       {/* <Reading /> */}
       <Footer />
     </div>

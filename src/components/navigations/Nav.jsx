@@ -193,7 +193,7 @@ function Nav() {
             </div>
             <p>Search</p>
           </div>
-          <Link href="/">
+          <Link href="/feed">
             <div className="flex gap-2 items-center text-sm">
               <div className="relative h-5 w-5">
                 <Image alt="search icon" src={home} fill />
@@ -201,12 +201,16 @@ function Nav() {
               <p>Home</p>
             </div>
           </Link>
+
+          <Link href="/profile">
           <div className="flex gap-2 items-center text-sm">
             <div className="relative h-5 w-5">
               <Image alt="search icon" src={profile} fill />
             </div>
             <p>Profile</p>
           </div>
+          </Link>
+
           <div className="flex gap-2 items-center text-sm">
             <div className="relative h-5 w-5">
               <Image alt="search icon" src={portfolioIcon} fill />

@@ -62,8 +62,8 @@ function Portfolio() {
                   <path
                     d="M17.7727 6.59091L8 16.3636V20H11.6364L21.4091 10.2273M17.7727 6.59091L18.6105 5.75312C19.0927 5.2709 19.7468 5 20.4287 5C21.8488 5 23 6.15121 23 7.5713C23 8.25325 22.7291 8.90727 22.2469 9.38948L21.4091 10.2273M17.7727 6.59091L21.4091 10.2273"
                     stroke="url(#paint0_linear_503_10215)"
-                    stroke-width="2"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
                   />
                   <defs>
                     <linearGradient
@@ -74,8 +74,8 @@ function Portfolio() {
                       y2="20"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop offset="0.317708" stop-color="#000F55" />
-                      <stop offset="0.848958" stop-color="#B30048" />
+                      <stop offset="0.317708" stopColor="#000F55" />
+                      <stop offset="0.848958" stopColor="#B30048" />
                     </linearGradient>
                   </defs>
                 </svg>

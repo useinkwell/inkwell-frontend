@@ -9,8 +9,7 @@ const initialState = {
   searchWidth: "w-0",
   searchWidthLarge: "w-0",
   notificationIsOpen: false,
-  notificationWidth: "w-0",
-  notificationWidthLarge: "w-0",
+  notificationWidth: "w-0"
 };
 
 const navSlice = createSlice({
@@ -44,12 +43,10 @@ const navSlice = createSlice({
     notificationOpen: (state, action) => {
       state.notificationIsOpen = true;
       state.notificationWidth = "w-full";
-      state.notificationWidthLarge = "w-6/12";
     },
     notificationClose: (state, action) => {
       state.notificationIsOpen = false;
       state.notificationWidth = "w-0";
-      state.notificationWidthLarge = "w-0";
     },
     anythingOpen: (state, action) => {
       state.isAnythingOpen = true;

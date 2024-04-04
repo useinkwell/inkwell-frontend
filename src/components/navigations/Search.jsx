@@ -12,7 +12,7 @@ import { useRef, useEffect, useState } from "react";
 
 function Search() {
   const dispatch = useDispatch();
-  const { searchWidth, searchWidthLarge, isAnythingOpen } = useSelector(
+  const { searchWidth, searchWidthLarge, isAnythingOpen, searchIsOpen } = useSelector(
     (store) => store.mobileNav
   );
   // const searchRef = useRef(null);
@@ -29,7 +29,6 @@ function Search() {
         dispatch(navClose());
       }
     }
-    // dispatch(checkAnything());
   }
   
 
@@ -37,7 +36,7 @@ function Search() {
     <div
       ref={searchRef}
       className={`${searchWidth} transition-all duration-300 ease-out lucida fixed overflow-auto 
-      z-30 top-0 bottom-0 left-0 right-0 bg-white h-screen flex flex-col xl:${searchWidthLarge}`}
+      z-30 top-0 bottom-0 left-0 right-0 bg-white h-screen flex flex-col ${searchIsOpen ? 'lg:w-1/2' : 'lg:w-0'}`}
     >
       <div>
         <div
