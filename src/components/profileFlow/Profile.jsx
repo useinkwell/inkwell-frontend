@@ -10,14 +10,17 @@ import Readers from "./reads/Readers";
 import Reading from "./reads/Reading";
 import Share from "./Share";
 import AddPortfolio from "./AddPortfolio";
-import { readerOpen } from "@/redux/slices/readSlice";
-import { useDispatch } from "react-redux";
+import { readerOpen, readingOpen} from "@/redux/slices/readSlice";
+import { useDispatch, useSelector } from "react-redux";
+import SecondNav from "../navigations/SecondNav";
 
 function Profile() {
   const dispatch = useDispatch();
+  const {rOverlayState} = useSelector((store)=> store.readSlice);
 
   return (
     <div>
+      <SecondNav/>
       <div>
         {/* Cover Photo */}
         <div>
@@ -62,7 +65,7 @@ function Profile() {
                   d="M17.7727 6.59091L8 16.3636V20H11.6364L21.4091 10.2273M17.7727 6.59091L18.6105 5.75312C19.0927 5.2709 19.7468 5 20.4287 5C21.8488 5 23 6.15121 23 7.5713C23 8.25325 22.7291 8.90727 22.2469 9.38948L21.4091 10.2273M17.7727 6.59091L21.4091 10.2273"
                   stroke="url(#paint0_linear_503_10215)"
                   stroke-width="2"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                 />
                 <defs>
                   <linearGradient
@@ -107,7 +110,10 @@ function Profile() {
                 <p className="ml-3">200</p>
               </div>
 
-              <div className="text-xs">
+              <div 
+              className="text-xs"
+              onClick={()=> dispatch(readingOpen())}
+              >
                 <p>Reading</p>
                 <p className="ml-3">200</p>
               </div>
@@ -143,10 +149,11 @@ function Profile() {
           </div>
         </div>
       </div>
+      <div className={`${rOverlayState} fixed top-0 bottom-0 left-0 right-0 bg-black opacity-20 z-10`}></div>
       {/* <AddPortfolio/> */}
       {/* <Share/> */}
       <Readers />
-      {/* <Reading /> */}
+      <Reading />
       <Footer />
     </div>
   );

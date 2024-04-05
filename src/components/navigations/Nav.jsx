@@ -106,10 +106,12 @@ function Nav() {
             >
               <i className="fa-solid fa-bars sm:hidden pr-5"></i>
             </div>
+            <Link href="/portfolio">
+              <div className="relative h-5 w-8 hidden sm:flex">
+                <Image src="/icons/folder-icon.svg" fill alt="portfolio icon" />
+              </div>
+            </Link>
 
-            <div className="relative h-5 w-8 hidden sm:flex">
-              <Image src="/icons/folder-icon.svg" fill alt="icon" />
-            </div>
             <div
               onClick={() => {
                 dispatch(notificationOpen());
@@ -117,14 +119,16 @@ function Nav() {
               }}
               className="relative h-5 w-8 hidden sm:flex"
             >
-              <Image src="/icons/bell-icon.svg" fill alt="icon" />
+              <Image src="/icons/bell-icon.svg" fill alt="bell icon" />
             </div>
             <div className="relative h-5 w-8 hidden sm:flex">
-              <Image src="/icons/back-icon.svg" fill alt="icon" />
+              <Image src="/icons/back-icon.svg" fill alt="logout icon" />
             </div>
-            <div className="relative h-5 w-8 hidden sm:flex">
-              <Image src="/icons/profile-icon.svg" fill alt="icon" />
-            </div>
+            <Link href="/profile">
+              <div className="relative h-5 w-8 hidden sm:flex">
+                <Image src="/icons/profile-icon.svg" fill alt="profile icon" />
+              </div>
+            </Link>
           </div>
         </div>
         {/* bottom */}
@@ -203,12 +207,12 @@ function Nav() {
           </Link>
 
           <Link href="/profile">
-          <div className="flex gap-2 items-center text-sm">
-            <div className="relative h-5 w-5">
-              <Image alt="search icon" src={profile} fill />
+            <div className="flex gap-2 items-center text-sm">
+              <div className="relative h-5 w-5">
+                <Image alt="search icon" src={profile} fill />
+              </div>
+              <p>Profile</p>
             </div>
-            <p>Profile</p>
-          </div>
           </Link>
 
           <div className="flex gap-2 items-center text-sm">
