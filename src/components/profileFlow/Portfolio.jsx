@@ -15,9 +15,11 @@ import whitePen from "../../../public/icons/edit.svg";
 function Portfolio() {
   return (
     <div>
-      <SecondNav />
+      <div className="lg:hidden">
+        <SecondNav />
+      </div>
       <div className="hidden lg:block">
-       <Nav />
+        <Nav />
       </div>
       <div className="mt-10 lg:mt-0">
         {/* cover photo and background image */}
@@ -31,7 +33,7 @@ function Portfolio() {
               className="object-bottom "
             />
             <div className="absolute bottom-2 right-2 h-5 w-5 md:h-8 md:w-8">
-            <Image src={whitePen} alt="edit icon" fill/>
+              <Image src={whitePen} alt="edit icon" fill />
             </div>
           </div>
           {/* Profile photo and.... */}
@@ -134,9 +136,8 @@ function Portfolio() {
           <Card />
           <Card />
         </div>
-
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

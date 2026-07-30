@@ -9,7 +9,9 @@ const initialState = {
   searchWidth: "w-0",
   searchWidthLarge: "w-0",
   notificationIsOpen: false,
-  notificationWidth: "w-0"
+  notificationWidth: "w-0",
+  secondNavIsOpen: false
+
 };
 
 const navSlice = createSlice({
@@ -61,6 +63,12 @@ const navSlice = createSlice({
         state.isAnythingOpen = false;
       }
     },
+    openSecondNav:(state, action)=>{
+      state.secondNavIsOpen = true
+    },
+      closeSecondNav:(state, action)=>{
+        state.secondNavIsOpen = false 
+    }
   },
 });
 export const {
@@ -76,5 +84,7 @@ export const {
   anythingClose,
   anythingOpen,
   updateAnything,
+  openSecondNav,
+  closeSecondNav
 } = navSlice.actions;
 export default navSlice.reducer;

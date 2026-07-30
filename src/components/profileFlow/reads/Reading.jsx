@@ -33,7 +33,7 @@ function Reading() {
     <div>
     <div
       className={`${readingIsOpen ? "w-full lg:w-1/2":"w-0"} lucida fixed top-0 right-0 bottom-0 bg-white overflow-auto pt-5
-      lg: z-20 transition-all duration-300 ease-out`}
+      z-20 transition-all duration-300 ease-out`}
     >
       <div className="flex items-center justify-between px-2">
         <div></div>
